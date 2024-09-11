@@ -22,7 +22,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div>
+    <div className='mt-5'>
       {hasEnded ? (
         <h2>Timer is ended</h2>
       ) : (

@@ -1,9 +1,8 @@
-
-
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './Navbar'
 import 'flipdown/dist/flipdown.css'
+import UserLogin from './pages/UserLogin'
 function App() {
   
 
@@ -12,7 +11,8 @@ function App() {
 <BrowserRouter>
 <Navbar/>
 <Routes>
-  <Route path='/' element={<Home/>}></Route>
+  <Route path='/' element={<UserLogin/>}></Route>
+  <Route path='/Home' element={<Home/>}></Route>
 </Routes>
 </BrowserRouter>
     </>
