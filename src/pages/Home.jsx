@@ -91,12 +91,15 @@ const Home = () => {
   const [cart, setCart] = useState([])
   const [ishomePage, setishomePage] = useState(2)
   const [newValue, setNewvalue] = useState();
-
+let [total,setTotal]=useState(0)
   function addToCart(item) {
 
 
     setCart([...cart, item]);
     console.log(cart);
+    setTotal(total+=item.total)
+    console.log(total);
+    
     toast.success("Added to cart!");
 
 
@@ -117,6 +120,7 @@ const Home = () => {
     console.log("increaseQuantiy================", quant)
     setNewvalue(quant)
     cart[ind].total += cart[ind].price
+    setTotal(total+=cart[ind].price)
 
   }
 
@@ -125,6 +129,7 @@ const Home = () => {
     console.log("decreaseQuantity========", cart[ind].quantity);
     setNewvalue(cart[ind].quantity)
     cart[ind].total = cart[ind].total - cart[ind].price
+    setTotal(total-=cart[ind].price)
 
 
   }
@@ -201,7 +206,8 @@ const Home = () => {
                 
                 &nbsp;&nbsp;&nbsp;
 
-                <Modal show={Modalshow} onHide={handleModalClose} variant='transparent'>
+                <Modal show={Modalshow} onHide={handleModalClose}  style={{ backgroundColor: 'transparent' }} // Removes the modal background
+  contentClassName="modal-content-transparent">
         
         <Modal.Body><UserLogin/></Modal.Body>
         
@@ -275,6 +281,7 @@ const Home = () => {
           </div>
         </nav>
       </div>
+      
       {ishomePage === 2 ? <div>
         <div class="container-fluid p-4" style={{ backgroundColor: 'rgb(236,253,255)' }}>
           <div className="row justify-content-around">
@@ -295,7 +302,7 @@ const Home = () => {
         </div>
         <div className="container">
           <div className="row mt-4 justify-content-around">
-            <div className="col-md-6 bg-light p-5">
+            <div className="col-md-6 bg-light p-5 mt-5">
               <div className="row">
                 <div class="col-md-5">
                   <h4>Wooden & cloth sofa </h4>
@@ -310,7 +317,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 bg-light p-5">
+            <div className="col-md-4 bg-light p-5 mt-5">
               <div className="row">
                 <div class="col-md-5">
                   <h4>Wooden & cloth sofa </h4>
@@ -342,7 +349,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 bg-light p-5">
+            <div className="col-md-6 bg-light p-5 mt-5">
               <div className="row">
                 <div class="col-md-5">
                   <h4>Wooden & cloth sofa </h4>
@@ -462,9 +469,9 @@ const Home = () => {
             <div className="card col-11  mb-3 mt-5 border-0 " style={{ maxWidth: "30rem" }}>
 
               <div className="card-body mt-3 p-3  ">
-                <div className="d-flex justify-content-between "><h5 className="card-text">Subtotal:</h5><p></p></div> <br></br>
+                <div className="d-flex justify-content-between "><h5 className="card-text">Subtotal:{total}</h5><p></p></div> <br></br>
                 <div className="d-flex justify-content-between "><h5 className="card-text">Estimated shipping::</h5><p>40</p></div> <br></br>
-                <div className="d-flex justify-content-between "><h4 className="card-text">Total:</h4><h4 ></h4></div> <br />
+                <div className="d-flex justify-content-between "><h4 className="card-text">Total:{total+40}</h4><h4 ></h4></div> <br />
               </div>
               <div className="card-footer bg-transparent row justify-content-between ">
                 <div className="col-md-6 text-center mt-2">

@@ -89,3 +89,9 @@ a {
     background-image: linear-gradient( 90.2deg,  rgba(79,255,255,1) 0.3%, rgba(0,213,255,1) 99.8% );
     
 }
+
+.modal-content-transparent {
+    background-color: transparent !important; /* Makes the modal content background transparent */
+    border: none !important; /* Removes the modal border */
+    box-shadow: none !important; /* Removes the box shadow */
+  }
