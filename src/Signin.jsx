@@ -53,7 +53,7 @@ function Signin() {
 
     } 
     else if(SigninData.name == 'sneha' && SigninData.password == '1234' ){
-        navigate("/Home");
+        
     }
 
   }
