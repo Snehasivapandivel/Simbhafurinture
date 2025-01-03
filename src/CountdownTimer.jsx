@@ -6,7 +6,7 @@ const CountdownTimer = () => {
 
   useEffect(() => {
     // Unix timestamp (in seconds) to count down to
-    const toDayFromNow = (new Date("Dec 31, 2024 23:59:59").getTime() / 1000) + (3600 / 60 / 60 / 24) - 1;
+    const toDayFromNow = (new Date("Dec 31, 2025 23:59:59").getTime() / 1000) + (3600 / 60 / 60 / 24) - 1;
 
     // Set Up FlipDown
     const flipdown = new FlipDown(toDayFromNow)

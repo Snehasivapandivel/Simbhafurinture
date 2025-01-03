@@ -37,7 +37,7 @@ function Signin() {
     let nwarning = document.getElementById("nameWarning");
     let pwarning = document.getElementById("passwarning");
 
-    if (SigninData.name == '' || SigninData.name == null ) {
+    if (SigninData.name == '' || SigninData.name == null && SigninData.password == '' || SigninData.password == null ) {
       nwarning.innerHTML = "Enter your Name";
       nwarning.style.color = "red";
       pwarning.innerHTML = "Enter Password";
@@ -45,10 +45,11 @@ function Signin() {
     } else if (SigninData.password == '' || SigninData.password == null) {
       pwarning.innerHTML = "Enter Password";
       pwarning.style.color = "red";
-    } else if (SigninData.name == '' || SigninData.name == null && SigninData.password == '' || SigninData.password == null) {
+    } else if ( SigninData.name == '' || SigninData.name == null) {
       nwarning.innerHTML = "Enter your Name";
       nwarning.style.color = "red";
       pwarning.innerHTML = "Enter Password";
+     
       pwarning.style.color = "red";
 
     } 

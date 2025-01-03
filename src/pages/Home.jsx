@@ -92,6 +92,8 @@ const Home = () => {
   const [ishomePage, setishomePage] = useState(2)
   const [newValue, setNewvalue] = useState();
 let [total,setTotal]=useState(0)
+
+
   function addToCart(item) {
 
 
@@ -199,7 +201,7 @@ let [total,setTotal]=useState(0)
             <div class="collapse navbar-collapse justify-content-end me-5" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16" onClick={handleModalShow}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16" onClick={handleModalShow} style={{cursor:'pointer'}}>
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
 </svg>
                 </li>
@@ -225,7 +227,7 @@ let [total,setTotal]=useState(0)
                     <div className="cart">
                       <span className="count">{cart.length}</span>
 
-                      <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "22px", height: "22px", fill: "black" }} fill="" className="bi bi-cart3 material-icons" viewBox="0 0 16 16" onClick={handleShow}>
+                      <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "22px", height: "22px", fill: "black",cursor:'pointer' }} fill="" className="bi bi-cart3 material-icons" viewBox="0 0 16 16" onClick={handleShow}>
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                       </svg>
                     </div>
@@ -469,9 +471,9 @@ let [total,setTotal]=useState(0)
             <div className="card col-11  mb-3 mt-5 border-0 " style={{ maxWidth: "30rem" }}>
 
               <div className="card-body mt-3 p-3  ">
-                <div className="d-flex justify-content-between "><h5 className="card-text">Subtotal:{total}</h5><p></p></div> <br></br>
+                <div className="d-flex justify-content-between "><h5 className="card-text">Subtotal:</h5><p>{total}</p></div> <br></br>
                 <div className="d-flex justify-content-between "><h5 className="card-text">Estimated shipping::</h5><p>40</p></div> <br></br>
-                <div className="d-flex justify-content-between "><h4 className="card-text">Total:{total+40}</h4><h4 ></h4></div> <br />
+                <div className="d-flex justify-content-between "><h4 className="card-text">Total:</h4><h4 >{total+40}</h4></div> <br />
               </div>
               <div className="card-footer bg-transparent row justify-content-between ">
                 <div className="col-md-6 text-center mt-2">
